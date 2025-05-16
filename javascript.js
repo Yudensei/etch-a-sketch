@@ -1,14 +1,15 @@
+let bgColor = "black";
+
 const div = document.createElement("div");
 div.setAttribute("class", "square");
 
 const container = document.querySelector("#container");
-container.addEventListener("mouseover", (e) => makeTrail(e.target));
+container.addEventListener("mouseover", (e) => makeTrail(e.target, bgColor));
 
 const erase = document.querySelector("#prompt");
 erase.addEventListener("click", promptErase)
 
 makeGrid(16);
-
 
 function makeGrid(sideLength) {
     container.textContent = '';
@@ -19,9 +20,9 @@ function makeGrid(sideLength) {
     }
 }
 
-function makeTrail(target) {
+function makeTrail(target, backgroundColor) {
     if (target.id === "container") return;
-    target.style.backgroundColor = "black";
+    target.style.backgroundColor = backgroundColor;
 }
 
 function promptErase() {

@@ -7,8 +7,11 @@ body {
     row-gap: 8px;
 }
 
+#prompt {
+    margin-top: 20px;
+}
+
 #container {
-    margin-bottom: 29px;
     width: 40vw;
     height: 40vw;
     min-width: 350px;
@@ -22,4 +25,17 @@ body {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+#options {
+    width: 40vw;
+    min-width: 350px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#normal,
+#rgb {
+    flex: 1 0 50%;
 }
