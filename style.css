@@ -2,11 +2,13 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    row-gap: 8px;
 }
 
 #container {
+    margin-bottom: 29px;
     width: 40vw;
     height: 40vw;
     min-width: 350px;
