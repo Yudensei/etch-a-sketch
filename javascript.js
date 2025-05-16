@@ -7,7 +7,13 @@ const container = document.querySelector("#container");
 container.addEventListener("mouseover", (e) => makeTrail(e.target, bgColor));
 
 const erase = document.querySelector("#prompt");
-erase.addEventListener("click", promptErase)
+erase.addEventListener("click", promptErase);
+
+const normalColor = document.querySelector("#normal");
+normalColor.addEventListener("click", () => bgColor = "black");
+
+const randomColor = document.querySelector("#rgb");
+randomColor.addEventListener("click", () => bgColor = "random")
 
 makeGrid(16);
 
@@ -22,6 +28,9 @@ function makeGrid(sideLength) {
 
 function makeTrail(target, backgroundColor) {
     if (target.id === "container") return;
+    if (backgroundColor === "random") {
+        backgroundColor = getRandomColor()
+    }
     target.style.backgroundColor = backgroundColor;
 }
 
@@ -34,4 +43,15 @@ function promptErase() {
     } else {
         makeGrid(choice)
     }
+}
+
+function getRandomColor() {
+    const red = getRandomRGBValue()
+    const green = getRandomRGBValue()
+    const blue = getRandomRGBValue()
+    return `rgb(${red}, ${green}, ${blue})`
+}
+
+function getRandomRGBValue() {
+    return Math.floor(Math.random() * 256)
 }
